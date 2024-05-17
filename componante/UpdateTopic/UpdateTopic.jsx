@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default function UpdateTopic({ id, title, description }) {
   const [newTitle, setNewTitle] = useState(title);
@@ -33,26 +34,36 @@ export default function UpdateTopic({ id, title, description }) {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="flex flex-col gap-3">
-      <input
-        onChange={(e) => setNewTitle(e.target.value)}
-        value={newTitle}
-        className="border border-slate-500 px-8 py-2"
-        type="text"
-        placeholder="Topic Title"
-      />
-
-      <input
-        onChange={(e) => setNewDescription(e.target.value)}
-        value={newDescription}
-        className="border border-slate-500 px-8 py-2"
-        type="text"
-        placeholder="Topic Description"
-      />
-
-      <button className="bg-green-600 font-bold text-white py-3 px-6 w-fit">
-        Update Topic
-      </button>
-    </form>
+    <div className="container mt-5">
+      <div className="row justify-content-center">
+        <div className="col-md-6">
+          <form onSubmit={handleSubmit} className="p-4 border rounded">
+            <div className="mb-3">
+              <label htmlFor="newTopicTitle" className="form-label">New Topic Title</label>
+              <input
+                type="text"
+                className="form-control"
+                id="newTopicTitle"
+                value={newTitle}
+                onChange={(e) => setNewTitle(e.target.value)}
+                placeholder="Enter new topic title"
+              />
+            </div>
+            <div className="mb-3">
+              <label htmlFor="newTopicDescription" className="form-label">New Topic Description</label>
+              <textarea
+                className="form-control"
+                id="newTopicDescription"
+                value={newDescription}
+                onChange={(e) => setNewDescription(e.target.value)}
+                placeholder="Enter new topic description"
+                rows={7} // Nombre de lignes visible dans la zone de texte
+              />
+            </div>
+            <button type="submit" className="btn btn-primary">Update Topic</button>
+          </form>
+        </div>
+      </div>
+    </div>
   );
 }

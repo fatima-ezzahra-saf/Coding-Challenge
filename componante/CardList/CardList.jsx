@@ -1,7 +1,6 @@
 import React from "react";
 import styles from "./cardList.module.css";
 import Pagination from "../pagination/Pagination";
-import Image from "next/image";
 import Card from "../card/Card";
 
 const getTopics = async () => {
@@ -26,7 +25,7 @@ const CardList = async () => {
   
   return (
     <div>
-       <h1 className={styles.title} style={{textAlign:"center"}}>Recent Posts</h1>
+       <h1 className={styles.title} style={{textAlign:"center",color:"#db7cc3",textShadow: "2px 2px 4px rgba(0, 0, 0, 0.3)"}}>Recent Posts</h1>
       {topics.map((t) => (
         <div className={styles.container} key={t._id}>
           <div className={styles.posts}>

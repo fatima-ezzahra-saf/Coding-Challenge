@@ -8,13 +8,12 @@ const Navbar = () => {
   return (
     <div className={styles.container}>
       <div className={styles.social}>
-        <Image src="/images.jpg" alt="facebook" width={24} height={24} style={{width:"100px",height:"100px"}}/>
+        <Image src="/logo.webp" alt="" width={150} height={150}/>
       </div>
-      <div className={styles.logo}>Acctuality topics</div>
+      <div className={styles.logo}>Actual topics</div>
       <div className={styles.links}>
-        <Link href="/" className={styles.link}>Homepage</Link>
-        <Link href="/" className={styles.link}>Contact</Link>
-        <Link href="/" className={styles.link}>About</Link>
+      <Link href="/" className={styles.link}>Home Page</Link>
+        <Link href="/addTopic" className={styles.link}>Create a topic</Link>
       </div>
     </div>
   );

@@ -1,12 +1,11 @@
 "use client";
-
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import 'bootstrap/dist/css/bootstrap.min.css'; // Import Bootstrap CSS
 
 export default function AddTopic() {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
-
   const router = useRouter();
 
   const handleSubmit = async (e) => {
@@ -37,29 +36,36 @@ export default function AddTopic() {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="flex flex-col gap-3">
-      <input
-        onChange={(e) => setTitle(e.target.value)}
-        value={title}
-        className="border border-slate-500 px-8 py-2"
-        type="text"
-        placeholder="Topic Title"
-      />
-
-      <input
-        onChange={(e) => setDescription(e.target.value)}
-        value={description}
-        className="border border-slate-500 px-8 py-2"
-        type="text"
-        placeholder="Topic Description"
-      />
-
-      <button
-        type="submit"
-        className="bg-green-600 font-bold text-white py-3 px-6 w-fit"
-      >
-        Add Topic
-      </button>
-    </form>
+    <div className="container mt-5">
+      <div className="row justify-content-center">
+        <div className="col-md-6">
+          <form onSubmit={handleSubmit}>
+            <div className="mb-3">
+              <label htmlFor="topicTitle" className="form-label">Topic Title</label>
+              <input
+                type="text"
+                className="form-control"
+                id="topicTitle"
+                value={title}
+                onChange={(e) => setTitle(e.target.value)}
+                placeholder="Enter topic title"
+              />
+            </div>
+            <div className="mb-3">
+              <label htmlFor="topicDescription" className="form-label">Topic Description</label>
+              <textarea
+                className="form-control"
+                id="topicDescription"
+                value={description}
+                onChange={(e) => setDescription(e.target.value)}
+                placeholder="Enter topic description"
+                rows={7} 
+              />
+            </div>
+            <button type="submit" className="btn btn-primary">Add Topic</button>
+          </form>
+        </div>
+      </div>
+    </div>
   );
 }

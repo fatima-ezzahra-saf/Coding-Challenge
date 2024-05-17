@@ -1,0 +1,23 @@
+/* Styles for the More component */
+.card {
+    width: 800px; 
+    margin: 20px auto; 
+    border: 1px solid #ccc; 
+    border-radius: 10px; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+    background-color: #fff; 
+    padding: 20px;
+  }
+  
+  .title {
+    text-align: center;
+    text-shadow: #3b3434;
+    font-size: 60px; 
+    margin-bottom: 10px; 
+  }
+  
+  .description {
+    font-size: 20px; 
+    white-space: pre-line; /* Permettre le saut de ligne dans la description */
+  }
+  

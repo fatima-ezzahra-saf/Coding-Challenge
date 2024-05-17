@@ -13,7 +13,7 @@ export default function DeleteBtn({ id }) {
       });
 
       if (res.ok) {
-        router.refresh();
+        router.push("/");
       }
     }
   };

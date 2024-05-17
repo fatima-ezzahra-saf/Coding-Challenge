@@ -21,5 +21,5 @@ export default async function EditTopic({ params }) {
   const { topic } = await getTopicById(id);
   const { title, description } = topic;
 
-  return <ReadTopic title={title} description={description} />;
+  return <ReadTopic id={id} title={title} description={description} />;
 }
