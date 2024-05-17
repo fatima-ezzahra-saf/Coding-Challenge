@@ -9,5 +9,6 @@ export default function Home() {
   return <div>
     <Featured/>
     <CardList/>
+    
     </div>;
 }

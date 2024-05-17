@@ -1,8 +1,9 @@
 import React from 'react';
 import Link from 'next/link';
+import DeleteBtn from './DeleteBtn'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-const Card = () => {
+const Card = ({title,desc,id}) => {
   return (
     <div className="container mt-5"> 
       <div className="row justify-content-center">
@@ -17,15 +18,16 @@ const Card = () => {
                 </div>
                 <div className="col-md-8"> 
                   <div className="text-container">
-                    <div className="detail">
-                      <span className="date">77777</span>
-                      <span className="category">Food</span>
-                    </div>
                     <Link href="/posts/">
-                      <h1 className="card-title">Food Blog</h1> 
+                      <h1 className="card-title">{title}</h1> 
                     </Link>
-                    <p className="desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce elementum felis id lorem condimentum, et malesuada libero ullamcorper.</p>
-                    <Link href="/posts/" className="btn btn-primary">Read More</Link> 
+                    <p className="desc">{desc}</p>
+                    <Link href={`/readMore/${id}`} className="btn btn-primary">Read More</Link>
+                    <div>
+                      <br/>
+                    </div>
+                    <Link href={`/updateTopic/${id}`} className="btn btn-warning">Edit</Link>&nbsp;&nbsp;
+                    <DeleteBtn id={id} />
                   </div>
                 </div>
               </div>
